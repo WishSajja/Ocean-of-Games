@@ -6,6 +6,7 @@ export default function App() {
     <>
       <ColorModeButton />
       <Button colorPalette="blue">Click me</Button>
+      <Button colorPalette="blue">Click me</Button>
     </>
   );
 }
