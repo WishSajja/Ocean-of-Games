@@ -1,36 +1,32 @@
-import { ColorModeButton } from "@/components/ui/color-mode";
-import { Grid, GridItem, Box } from "@chakra-ui/react";
-import Navbar from "./Component/Narbar";
+import { Grid, GridItem } from "@chakra-ui/react";
+import NavBar from "./Component/Navbar";
+import GameGrid from "./Component/GameGrid";
 
 export default function App() {
   return (
-    <Grid
-      templateAreas={{
-        base: `"nav" "main"`,
-        lg: `"nav nav" "aside main"`,
-      }}
-      templateColumns={{
-        base: "1fr",
-        lg: "1fr 1fr",
-      }}
-    >
-      <GridItem area="nav" bg="red" p={4}>
-        <Navbar />
-        {/* <ColorModeButton /> */}
-      </GridItem>
-
-      <GridItem
-        area="aside"
-        bg="blue"
-        display={{ base: "none", lg: "block" }}
-        p={4}
+    <>
+      <Grid
+        templateAreas={{
+          base: `"nav" "main"`,
+          lg: `"nav nav" "aside main"`,
+        }}
+        templateColumns={{
+          base: "1fr",
+          lg: "1fr 2fr",
+        }}
       >
-        side bar
-      </GridItem>
+        <GridItem area="nav" p={4}>
+          <NavBar />
+        </GridItem>
 
-      <GridItem area="main" bg="gray" p={4}>
-        main body
-      </GridItem>
-    </Grid>
+        <GridItem area="aside" display={{ base: "none", lg: "block" }} p={4}>
+          side bar
+        </GridItem>
+
+        <GridItem area="main" p={4}>
+          <GameGrid />
+        </GridItem>
+      </Grid>
+    </>
   );
 }
