@@ -16,7 +16,7 @@ export interface Game {
   gameBrainUrl?: string ;
   developer?: string ;
   genres?: string ;
-  platforms?: string ;
+  platforms?: string[] ;
   screenshots?: string ;
   cachedAt: string;
 }
@@ -32,11 +32,13 @@ const [error, setError]= useState("");
       .get<Game[]>("/api/games", {signal:controller.signal})
       .then((response) => {
         setGames(response.data);
+        // console.log(response.data); // Log the response data to the console
       })
       .catch((error) => {
         if(error instanceof CanceledError)
             return;
         setError(error.message);
+        // console.log(error.message); // Log the error message to the console
       });
       return ()=> controller.abort();
 

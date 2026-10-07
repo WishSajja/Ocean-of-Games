@@ -4,7 +4,7 @@ import GameCard from "./GameCard";
 
 const GameGrid = () => {
   const { error, games } = useGame();
-
+  console.log(games);
   return (
     <>
       {error && <Text className="text-danger">{error}</Text>}
@@ -12,7 +12,7 @@ const GameGrid = () => {
        ↓       ↓
       50px    30px */}
       <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, xl: 3 }}
+        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         padding="10px"
         gap="10px"
       >
