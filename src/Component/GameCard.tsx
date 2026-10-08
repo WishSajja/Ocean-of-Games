@@ -1,10 +1,7 @@
 import type { Game } from "@/hooks/useGames";
-// import { FaWindows, FaXbox, FaPlaystation } from "react-icons/fa";
-// import { BsGlobe } from "react-icons/bs";
-
-import { Card, Image } from "@chakra-ui/react";
+import { Card, HStack, Image, Text } from "@chakra-ui/react";
 import PlatformIconList from "./GameIconList";
-// import PlatformIconList from "./GameIconList";
+import CriticScore from "./CriticScore";
 
 interface Props {
   games: Game;
@@ -12,10 +9,10 @@ interface Props {
 
 const GameCard = ({ games }: Props) => {
   // console.log(games.platforms);
+  const gm = games.rating ?? 0;
   return (
     <Card.Root
       width="100%"
-      height="300px"
       overflow="hidden"
       bg="gray.800"
       borderRadius="10px"
@@ -25,12 +22,21 @@ const GameCard = ({ games }: Props) => {
         boxShadow: "xl",
       }}
     >
-      <Image src={games.imageUrl} height="150px" objectFit="cover" />
+      <Image
+        src={games.imageUrl}
+        width="100%"
+        height="150px"
+        loading="lazy"
+        objectFit="cover"
+      />
       <Card.Body>
-        <Card.Header fontSize="lg" padding={0}>
+        <Card.Header fontFamily="sans-serif" fontSize="md" padding={0}>
           {games.name}
-          <PlatformIconList Platforms={games.platforms ?? []} />
         </Card.Header>
+        <HStack justifyContent="space-between">
+          <PlatformIconList Platforms={games.platforms ?? []} />
+          <CriticScore score={Math.round(gm * 100)} />
+        </HStack>
       </Card.Body>
     </Card.Root>
   );

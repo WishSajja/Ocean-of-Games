@@ -1,7 +1,7 @@
 import { HStack, Icon, Text } from "@chakra-ui/react";
 import type { IconType } from "react-icons";
 import { FaPlaystation, FaWindows, FaXbox } from "react-icons/fa";
-import { SiVinted } from "react-icons/si";
+import { TbDeviceNintendo } from "react-icons/tb";
 
 interface Props {
   Platforms: string[];
@@ -11,7 +11,7 @@ const PlatformIconList = ({ Platforms }: Props) => {
     PC: FaWindows,
     "PlayStation 5": FaPlaystation,
     "Xbox Series X/S": FaXbox,
-    Nintendo: SiVinted,
+    Nitendo: TbDeviceNintendo,
   };
 
   return (
@@ -21,7 +21,7 @@ const PlatformIconList = ({ Platforms }: Props) => {
 
         if (!IconComponent) return null;
 
-        return <IconComponent key={platform} />;
+        return <IconComponent key={platform} color="gray.500" />;
       })}
     </HStack>
   );
