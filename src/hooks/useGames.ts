@@ -1,3 +1,4 @@
+import type { Gamequery } from "@/App";
 import useData from "./useData";
 
 
@@ -19,7 +20,12 @@ export interface Game {
   cachedAt: string;
 }
 
-const useGame = ()=>useData<Game>('/api/games')
+const useGame = (gameQuery:Gamequery)=>useData<Game>('/api/games', {
+  params: {
+    genre: gameQuery.genre,
+     platform: gameQuery.platform
+    }},
+     [gameQuery]);
 
 export default useGame;
 

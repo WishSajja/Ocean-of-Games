@@ -3,8 +3,15 @@ import useGame from "@/hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardcontainer";
-const GameGrid = () => {
-  const { error, data, isLoading } = useGame();
+import type { Gamequery } from "@/App";
+
+interface GameGridProps {
+  GameQuery: Gamequery;
+}
+
+const GameGrid = ({ GameQuery }: GameGridProps) => {
+  const { error, data, isLoading } = useGame(GameQuery);
+  console.log(data);
 
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
@@ -21,13 +28,13 @@ const GameGrid = () => {
         {/* loading skeletons */}
         {isLoading &&
           skeletons.map((skeleton) => (
-            <GameCardContainer>
+            <GameCardContainer key={skeleton}>
               <GameCardSkeleton />
             </GameCardContainer>
           ))}
         {data.map((game) => (
-          <GameCardContainer>
-            <GameCard key={game.id} games={game} />
+          <GameCardContainer key={game.id}>
+            <GameCard games={game} />
           </GameCardContainer>
         ))}
       </SimpleGrid>

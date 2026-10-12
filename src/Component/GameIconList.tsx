@@ -1,7 +1,8 @@
-import { HStack, Icon, Text } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import type { IconType } from "react-icons";
 import { FaPlaystation, FaWindows, FaXbox } from "react-icons/fa";
 import { TbDeviceNintendo } from "react-icons/tb";
+import { FaApple } from "react-icons/fa";
 
 interface Props {
   Platforms: string[];
@@ -12,6 +13,7 @@ const PlatformIconList = ({ Platforms }: Props) => {
     "PlayStation 5": FaPlaystation,
     "Xbox Series X/S": FaXbox,
     Nitendo: TbDeviceNintendo,
+    mac: FaApple,
   };
 
   return (

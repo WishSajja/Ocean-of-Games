@@ -34,7 +34,7 @@ const GameCard = ({ games }: Props) => {
         // justifyContent="flex-end"
         mt="auto"
       >
-        <Card.Title fontFamily="sans-serif" fontSize="md" padding={0}>
+        <Card.Title fontFamily="sans-serif" fontSize="md" padding={0} mt="auto">
           {games.name}
         </Card.Title>
         <HStack justifyContent="space-between">
