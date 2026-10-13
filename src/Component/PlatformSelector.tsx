@@ -4,17 +4,21 @@ import { FaChevronDown } from "react-icons/fa";
 
 interface PlatformSelectorProps {
   onSelectPlatform: (platform: string | null) => void;
+  selectedPlatform?: string | null;
 }
 
-const PlatformSelector = ({ onSelectPlatform }: PlatformSelectorProps) => {
+const PlatformSelector = ({
+  onSelectPlatform,
+  selectedPlatform,
+}: PlatformSelectorProps) => {
   const { data, error } = usePlatorms();
   return (
     <>
-      {error && <Text color={"red"}>{error}</Text>}
+      {/* {error && <Text color={"red"}>{error}</Text>} */}
       <Menu.Root>
         <Menu.Trigger asChild>
           <Button variant="outline">
-            Platforms
+            {selectedPlatform ? selectedPlatform : "Platform"}
             <FaChevronDown />
           </Button>
         </Menu.Trigger>

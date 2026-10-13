@@ -20,10 +20,11 @@ export interface Game {
   cachedAt: string;
 }
 
-const useGame = (gameQuery:Gamequery)=>useData<Game>('/api/games', {
+const useGame = (gameQuery?:Gamequery)=>useData<Game>('/api/games', {
   params: {
-    genre: gameQuery.genre,
-     platform: gameQuery.platform
+    genre: gameQuery?.genre,
+    platform: gameQuery?.platform,
+    sortOrder:gameQuery?.sortOrder
     }},
      [gameQuery]);
 

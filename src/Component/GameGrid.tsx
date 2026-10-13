@@ -11,9 +11,8 @@ interface GameGridProps {
 
 const GameGrid = ({ GameQuery }: GameGridProps) => {
   const { error, data, isLoading } = useGame(GameQuery);
-  console.log(data);
 
-  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 15, 13, 22];
   return (
     <>
       {error && <Text className="text-danger">{error}</Text>}

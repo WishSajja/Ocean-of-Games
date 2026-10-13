@@ -2,6 +2,7 @@ import type { Game } from "@/hooks/useGames";
 import { Card, HStack, Image } from "@chakra-ui/react";
 import PlatformIconList from "./GameIconList";
 import CriticScore from "./CriticScore";
+import Noimage from "../assets/Image Placeholder/no-image-placeholder-6f3882e0.webp";
 
 interface Props {
   games: Game;
@@ -22,7 +23,7 @@ const GameCard = ({ games }: Props) => {
       }}
     >
       <Image
-        src={games.imageUrl}
+        src={games.imageUrl ?? Noimage}
         // width="100%"
         height="190px"
         loading="lazy"
