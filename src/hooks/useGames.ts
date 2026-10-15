@@ -24,7 +24,8 @@ const useGame = (gameQuery?:Gamequery)=>useData<Game>('/api/games', {
   params: {
     genre: gameQuery?.genre,
     platform: gameQuery?.platform,
-    sortOrder:gameQuery?.sortOrder
+    sortOrder:gameQuery?.sortOrder,
+    searchText: gameQuery?.searchText
     }},
      [gameQuery]);
 

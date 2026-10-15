@@ -8,9 +8,9 @@ interface SortSelectorProps {
 
 const SortSelector = ({ SortOrder, onSelectSortOrder }: SortSelectorProps) => {
   const sortOrders = [
-    { value: "-name", label: "Name" },
-    { value: "-released", label: "Release date" },
-    { value: "-metacritic", label: "Popularity" },
+    { value: "Name", label: "Name" },
+    { value: "Released", label: "Release date" },
+    { value: "Metacritic", label: "Popularity" },
   ];
 
   const CurrentSortOrder = sortOrders.find((m) => m.value == SortOrder);
