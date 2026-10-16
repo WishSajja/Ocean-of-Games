@@ -30,6 +30,23 @@ export default function App() {
         }}
       >
         <GridItem area="nav" p={2}>
+          {/* <Box
+            data-state="open"
+            _open={{
+              animationName: "fade-in, scale-in",
+              animationDuration: "400ms",
+            }}
+          >
+            Open
+          </Box>
+          <Box
+            data-state="close"
+            _closed={{
+              animation: "fadeOut 400ms ease-in",
+            }}
+          >
+            closed
+          </Box> */}
           <NavBar
             onSearch={(searchText) =>
               setGameQuery({ ...GameQuery, searchText })

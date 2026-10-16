@@ -15,9 +15,10 @@ const GameGrid = ({ GameQuery }: GameGridProps) => {
   const skeletons = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 199, 13, 22,
   ];
+
+  if (error) return <Text className="text-danger">{error}</Text>;
   return (
     <>
-      {error && <Text className="text-danger">{error}</Text>}
       {/* gap="row-gap column-gap"
        ↓       ↓
       50px    30px */}

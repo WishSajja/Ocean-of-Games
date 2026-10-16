@@ -16,7 +16,7 @@ export interface Game {
   developer?: string ;
   genres?: string ;
   platforms?: string[] ;
-  screenshots?: string ;
+  screenshots?: string[] ;
   cachedAt: string;
 }
 

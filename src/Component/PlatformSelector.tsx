@@ -1,5 +1,5 @@
 import usePlatorms from "@/hooks/usePlatforms";
-import { Button, Menu, Portal, Text } from "@chakra-ui/react";
+import { Button, Menu, Portal } from "@chakra-ui/react";
 import { FaChevronDown } from "react-icons/fa";
 
 interface PlatformSelectorProps {
@@ -11,7 +11,7 @@ const PlatformSelector = ({
   onSelectPlatform,
   selectedPlatform,
 }: PlatformSelectorProps) => {
-  const { data, error } = usePlatorms();
+  const { data } = usePlatorms();
   return (
     <>
       {/* {error && <Text color={"red"}>{error}</Text>} */}
